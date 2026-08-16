@@ -1,17 +1,15 @@
 {
-  "name": "Microsoft Word - Материјали за ученици",
-  "short_name": "Word материјали",
-  "description": "Материјали за ученици по предметот Техничко образование и информатика",
-  "lang": "mk",
-  "start_url": "./",
-  "scope": "./",
-  "display": "standalone",
-  "background_color": "#eef5fb",
-  "theme_color": "#245b9e",
-  "orientation": "portrait-primary",
-  "categories": ["education"],
-  "icons": [
-    {"src":"./icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
-    {"src":"./icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  "name":"Microsoft Word – Учи и вежбај",
+  "short_name":"Word Учи",
+  "description":"Материјали за ученици по предметот Техничко образование и информатика",
+  "lang":"mk",
+  "start_url":"./",
+  "scope":"./",
+  "display":"standalone",
+  "background_color":"#f3f6fb",
+  "theme_color":"#2563eb",
+  "icons":[
+    {"src":"icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
   ]
 }

@@ -2,77 +2,37 @@
 <html lang="mk">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#1f5fbf">
-  <meta name="description" content="Microsoft Word - материјали за ученици по предметот Техничко образование и информатика.">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Word материјали">
-  <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="icon" href="./icons/icon-192.png">
-  <link rel="apple-touch-icon" href="./icons/icon-192.png">
-  <link rel="stylesheet" href="./styles.css">
-  <title>Microsoft Word - материјали за ученици</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#2563eb">
+  <meta name="description" content="Microsoft Word – интерактивни материјали за ученици по Техничко образование и информатика">
+  <title>Word – Учи и вежбај</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="topbar">
-  <button class="brand" data-go="home" aria-label="Почетна">
-    <img src="./assets/word-logo.png" alt="Microsoft Word">
-    <span><strong>Microsoft Word</strong><small>Материјали за ученици</small></span>
-  </button>
-  <div class="top-actions">
-    <button id="fontBtn" class="iconbtn" aria-label="Промени големина на текст">A+</button>
-    <button id="themeBtn" class="iconbtn" aria-label="Темна или светла тема">🌙</button>
-  </div>
-</header>
-
-<main>
-  <section id="home" class="screen active">
-    <div class="hero card">
-      <img class="hero-logo" src="./assets/word-logo.png" alt="Оригиналното Microsoft Word лого од материјалот">
-      <div>
-        <p class="eyebrow">Microsoft Word</p>
-        <h1>Материјали за ученици по предметот Техничко образование и информатика</h1>
-        <p class="source-author">Изработи: Ѓорѓина Димова наст. по информатика<br>ООУ „Страшо Пинџур“ - Неготино</p>
-      </div>
+  <header class="topbar">
+    <button class="brand" data-go="home" aria-label="Почетна">
+      <img src="icons/icon-192.png" alt="">
+      <span><strong>Word – Учи и вежбај</strong><small>Техничко образование и информатика</small></span>
+    </button>
+    <div class="top-actions">
+      <button id="installBtn" class="install" hidden>📲 Инсталирај</button>
+      <button id="themeBtn" class="iconbtn" aria-label="Темна тема">🌙</button>
     </div>
+  </header>
 
-    <div class="card install-card">
-      <h2>📲 Додај ја на телефонот</h2>
-      <p>Оваа верзија е веб-апликација. Отвори ја во Chrome и избери <b>Install app / Add to Home screen</b>. По првото отворање, локалните лекции и слики се достапни и без интернет.</p>
-      <button id="installBtn" class="btn primary full">📲 Инсталирај / додај на почетен екран</button>
-      <p id="installHint" class="mini">Ако не се појави автоматско копче, отвори го менито ⋮ во Chrome и избери „Add to Home screen“ или „Install app“.</p>
-    </div>
+  <main id="app" tabindex="-1"></main>
 
-    <div class="card">
-      <div class="section-head">
-        <div><h2>📚 Содржина</h2><p>Текстот и сликите во лекциите се преземени од оригиналниот PDF материјал.</p></div>
-        <div class="progress-pill"><span id="doneCount">0</span>/8</div>
-      </div>
-      <div class="progressbar"><i id="progressBar" style="width:0%"></i></div>
-      <div id="lessonCards" class="lesson-grid"></div>
-    </div>
-  </section>
+  <nav class="bottom-nav" aria-label="Главна навигација">
+    <button data-go="home">🏠<span>Почетна</span></button>
+    <button data-go="lessons">📚<span>Лекции</span></button>
+    <button data-go="quiz">❓<span>Квиз</span></button>
+    <button data-go="progress">🏆<span>Напредок</span></button>
+  </nav>
 
-  <section id="lesson" class="screen">
-    <button class="backbtn" data-go="home">← Назад кон содржина</button>
-    <article id="lessonArticle" class="lesson-article"></article>
-  </section>
-</main>
-
-<nav class="bottomnav" aria-label="Навигација">
-  <button data-go="home" class="navbtn active"><span>⌂</span>Почетна</button>
-  <button id="nextUnread" class="navbtn"><span>📖</span>Следна лекција</button>
-  <button id="installNav" class="navbtn"><span>📲</span>Инсталирај</button>
-</nav>
-
-<div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modalbox">
-    <div class="modalhead"><h2 id="modalTitle">Инсталација</h2><button id="modalClose" class="close" aria-label="Затвори">×</button></div>
-    <div id="modalContent"></div>
-  </div>
-</div>
-<div id="toast" class="toast hidden" role="status"></div>
-<script src="./app.js"></script>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
 </body>
 </html>
