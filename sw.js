@@ -1,5 +1,5 @@
-const CACHE='word-uci-original-crops-v7';
-const ASSETS=['./','./index.html','./styles.css','./app.js','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./assets/page-03.webp','./assets/page-04.webp','./assets/page-05.webp','./assets/page-06.webp','./assets/page-07.webp','./assets/page-08.webp','./assets/page-09.webp','./assets/page-10.webp'];
+const CACHE='word-uci-original-crops-v8-videos';
+const ASSETS=['./','./index.html','./styles.css','./video.css','./app.js','./video-embed.js','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./assets/page-03.webp','./assets/page-04.webp','./assets/page-05.webp','./assets/page-06.webp','./assets/page-07.webp','./assets/page-08.webp','./assets/page-09.webp','./assets/page-10.webp'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;e.respondWith(caches.match(e.request).then(cached=>cached||fetch(e.request).then(r=>{if(r&&r.ok&&new URL(e.request.url).origin===location.origin){const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy))}return r}).catch(()=>e.request.mode==='navigate'?caches.match('./index.html'):undefined)))});
